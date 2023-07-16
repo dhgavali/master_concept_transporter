@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 // import VanHeader from "@mui/icons-material/LocalShippingOutlined";
+import "../index.css";
 
 const VanHeader = ({ data, onCardClick }) => {
   // console.log()
@@ -19,6 +20,7 @@ const VanHeader = ({ data, onCardClick }) => {
       {data.map((data, key) => {
         return (
           <Card
+            className="mycard"
             key={key}
             sx={{
               maxWidth: 300,

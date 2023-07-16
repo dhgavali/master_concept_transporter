@@ -13,7 +13,6 @@ import PieChart from "./utils/piechart";
 import Vanheader from "./utils/vanHeader";
 import data from "./data.json";
 import VanHeader from "./utils/vanHeader";
-
 const Home = () => {
   const [index, setIndex] = useState(0);
 
@@ -45,6 +44,13 @@ const Home = () => {
       </Typography>
       <VanHeader data={data} onCardClick={handleCardClick} />
 
+      {/* Datatable Compoenet */}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ width: "70%" }}>
+          <FilterTable counter={index} />
+        </div>
+      </Box>
+
       {/* Bar Plot Component */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <SimpleChart data={data} />
@@ -53,13 +59,6 @@ const Home = () => {
       {/* Pie Chart Component */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <PieChart data={data} />
-      </Box>
-
-      {/* Datatable Compoenet */}
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ width: "70%" }}>
-          <FilterTable counter={index} />
-        </div>
       </Box>
 
       {/* Footer */}
@@ -76,7 +75,12 @@ const Home = () => {
         <div style={{ width: "70%" }}>
           <Typography variant="body1">
             {"Project Developed by : "}{" "}
-            <a href="https://dhgavali.me" style={{TextDecoderation: "none", color:"grey"}}>Dhananjay Gavali</a>
+            <a
+              href="https://dhgavali.me"
+              style={{ TextDecoderation: "none", color: "grey" }}
+            >
+              Dhananjay Gavali
+            </a>
           </Typography>
         </div>
       </Box>

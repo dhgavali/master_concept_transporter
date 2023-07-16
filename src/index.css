@@ -1,0 +1,4 @@
+.mycard:hover {
+  background-color: blue;
+  transition: .4s;
+}
