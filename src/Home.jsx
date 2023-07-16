@@ -19,7 +19,6 @@ const Home = () => {
         background: "#FBFFB9",
         padding: "0",
         margin: "0",
-        height: "100vh",
       }}
     >
       <Typography

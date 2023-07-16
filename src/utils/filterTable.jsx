@@ -9,6 +9,7 @@ import {
   Paper,
   TextField,
   TablePagination,
+  Typography,
 } from "@mui/material";
 import dayjs from "dayjs";
 
@@ -49,14 +50,31 @@ const SimpleTable = ({ data }) => {
 
   return (
     <div>
-      <TextField
-        label="Search"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        margin="normal"
-      />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <TextField
+          label="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          margin="normal"
+          style={{ background: "white", borderRadius: "10px" }}
+        />
+      </div>
       {/* <Typography variant="body1">{data[0].vehicleid}</Typography> */}
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} style={{ marginBottom: 20 }}>
+        <Typography
+          variant="h6"
+          component="div"
+          align="center"
+          textAlign={"center"}
+          style={{ padding: 5 }}
+        >
+          {data[0].vehicleLabel} Data{" "}
+        </Typography>
         <Table>
           <TableHead>
             <TableRow>
