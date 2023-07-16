@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import BasicTable from "./utils/datatable";
 import FilterTable from "./utils/filterTable";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import data from "./data.json";
 
 const Home = () => {
@@ -49,17 +50,22 @@ const Home = () => {
                 color: "white",
               }}
             >
-              <CardContent>
+              <CardContent
+                sx={{
+                  display: "flex",
+                  justifyContent: "Center",
+                  flexFlow: "column",
+                  textAlign: "Center",
+                }}
+              >
+                <Typography>
+                  <LocalShippingOutlinedIcon style={{ fontSize: 50 }} />
+                </Typography>
                 <Typography variant="h5" component="div">
-                  {" "}
                   {data.vehicleLabel.toLocaleUpperCase()}{" "}
                 </Typography>
-                <Typography
-                  sx={{ mb: 1.5 }}
-                  color="text.secondary"
-                ></Typography>
+
                 <Typography variant="body1">
-                  <br />
                   {"Total Shipments : " + data.visits.length}
                 </Typography>
               </CardContent>

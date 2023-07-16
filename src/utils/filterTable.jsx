@@ -17,7 +17,7 @@ const SimpleTable = ({ data }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const visits = data[0]?.visits || [];
+  const visits = data[3]?.visits || [];
   const columns = ["shipmentLabel", "address", "VisitTime"];
 
   const handleChangePage = (_, newPage) => {
