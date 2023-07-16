@@ -3,6 +3,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import { Typography } from "@mui/material";
 
 const Barchart = ({ data }) => {
+  console.log("bar plot rendered");
   return (
     <div className="" >
       <Typography variant="h6" textAlign={"center"}>

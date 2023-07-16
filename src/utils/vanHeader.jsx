@@ -7,9 +7,13 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
-import VanHeader from "@mui/icons-material/LocalShippingOutlined";
+// import VanHeader from "@mui/icons-material/LocalShippingOutlined";
 
-const VanHeader = ({ data }) => {
+const VanHeader = ({ data, onCardClick }) => {
+  // console.log()
+  const handleCardClick = (cardIndex) => {
+    onCardClick(cardIndex-1);
+  };
   return (
     <Box sx={{ display: "flex", cursor: "pointer", justifyContent: "center" }}>
       {data.map((data, key) => {
@@ -22,6 +26,7 @@ const VanHeader = ({ data }) => {
               background: "#008DD5",
               color: "white",
             }}
+            onClick={() => handleCardClick(data.vehicleid)}
           >
             <CardContent
               sx={{
@@ -41,10 +46,10 @@ const VanHeader = ({ data }) => {
               <Typography variant="body1">
                 {"Total Shipments : " + data.visits.length}
               </Typography>
+              <Typography variant="body1">
+                {"current index: " + data.vehicleid}
+              </Typography>
             </CardContent>
-            {/* <CardActions>
-            <Button size="small">Card Button</Button>
-          </CardActions> */}
           </Card>
         );
       })}

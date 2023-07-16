@@ -3,6 +3,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { Typography } from "@mui/material";
 
 const BasicPie = ({ data }) => {
+  console.log("pie char rendered");
   return (
     <div className="">
       <Typography variant="h6">

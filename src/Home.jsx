@@ -10,14 +10,16 @@ import FilterTable from "./utils/filterTable";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import SimpleChart from "./utils/barplot";
 import PieChart from "./utils/piechart";
+import Vanheader from "./utils/vanHeader";
 import data from "./data.json";
+import VanHeader from "./utils/vanHeader";
 
 const Home = () => {
   const [index, setIndex] = useState(0);
 
   const handleCardClick = (newIndex) => {
     console.log(newIndex);
-    setIndex(newIndex - 1);
+    setIndex(newIndex);
   };
   return (
     <div
@@ -41,8 +43,9 @@ const Home = () => {
       >
         Welcome to Shipments Portal
       </Typography>
+      <VanHeader data={data} onCardClick={handleCardClick} />
 
-      <Box
+      {/* <Box
         sx={{ display: "flex", cursor: "pointer", justifyContent: "center" }}
       >
         {data.map((data, key) => {
@@ -82,8 +85,7 @@ const Home = () => {
             </Card>
           );
         })}
-      </Box>
-
+      </Box> */}
       {/* Bar Plot Component */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <SimpleChart data={data} />
@@ -97,7 +99,7 @@ const Home = () => {
       {/* Datatable Compoenet */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <div style={{ width: "70%" }}>
-          <FilterTable data={index} />
+          <FilterTable counter={index} />
         </div>
       </Box>
     </div>

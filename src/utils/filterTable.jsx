@@ -13,12 +13,13 @@ import {
 } from "@mui/material";
 import data from "../data.json";
 
-const SimpleTable = ({ index }) => {
+const SimpleTable = ({ counter }) => {
+  console.log(counter);
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const visits = data[index]?.visits || data[0].visits;
+  const visits = data[counter]?.visits || data[1].visits;
   const columns = ["shipmentLabel", "address", "VisitTime"];
 
   // const [visits, setVisits] = useState([]);
@@ -70,7 +71,7 @@ const SimpleTable = ({ index }) => {
           style={{ background: "white", borderRadius: "10px" }}
         />
       </div>
-      {/* <Typography variant="body1">{data[0].vehicleid}</Typography> */}
+
       <TableContainer component={Paper} style={{ marginBottom: 20 }}>
         <Typography
           variant="h6"
@@ -79,7 +80,7 @@ const SimpleTable = ({ index }) => {
           textAlign={"center"}
           style={{ padding: 5 }}
         >
-          {data[0].vehicleLabel} Data{" "}
+          {data[counter].vehicleLabel} Data{" "}
         </Typography>
         <Table>
           <TableHead>
