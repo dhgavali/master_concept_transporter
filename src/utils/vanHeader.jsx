@@ -16,7 +16,14 @@ const VanHeader = ({ data, onCardClick }) => {
     onCardClick(cardIndex - 1);
   };
   return (
-    <Box sx={{ display: "flex", cursor: "pointer", justifyContent: "center" }}>
+    <Box
+      sx={{
+        display: "flex",
+        cursor: "pointer",
+        justifyContent: "center",
+        flexFlow: "wrapg",
+      }}
+    >
       {data.map((data, key) => {
         return (
           <Card

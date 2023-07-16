@@ -76,7 +76,7 @@ const Home = () => {
           <Typography variant="body1">
             {"Project Developed by : "}{" "}
             <a
-              href="https://dhgavali.me"
+              href="https://github.com/dhgavali/master_concept_transporter/"
               style={{ TextDecoderation: "none", color: "grey" }}
             >
               Dhananjay Gavali
