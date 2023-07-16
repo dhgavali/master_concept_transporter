@@ -45,47 +45,6 @@ const Home = () => {
       </Typography>
       <VanHeader data={data} onCardClick={handleCardClick} />
 
-      {/* <Box
-        sx={{ display: "flex", cursor: "pointer", justifyContent: "center" }}
-      >
-        {data.map((data, key) => {
-          return (
-            <Card
-              key={key}
-              sx={{
-                maxWidth: 300,
-                margin: 5,
-                background: "#008DD5",
-                color: "white",
-              }}
-              onClick={() => handleCardClick(data.vehicleid)}
-            >
-              <CardContent
-                sx={{
-                  display: "flex",
-                  justifyContent: "Center",
-                  flexFlow: "column",
-                  textAlign: "Center",
-                }}
-              >
-                <Typography>
-                  <LocalShippingOutlinedIcon style={{ fontSize: 50 }} />
-                </Typography>
-                <Typography variant="h5" component="div">
-                  {data.vehicleLabel.toLocaleUpperCase()}{" "}
-                </Typography>
-
-                <Typography variant="body1">
-                  {"Total Shipments : " + data.visits.length}
-                </Typography>
-                <Typography variant="body1">
-                  {"current index: " + index}
-                </Typography>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </Box> */}
       {/* Bar Plot Component */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <SimpleChart data={data} />

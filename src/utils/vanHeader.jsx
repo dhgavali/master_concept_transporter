@@ -12,7 +12,7 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 const VanHeader = ({ data, onCardClick }) => {
   // console.log()
   const handleCardClick = (cardIndex) => {
-    onCardClick(cardIndex-1);
+    onCardClick(cardIndex - 1);
   };
   return (
     <Box sx={{ display: "flex", cursor: "pointer", justifyContent: "center" }}>
@@ -45,9 +45,6 @@ const VanHeader = ({ data, onCardClick }) => {
 
               <Typography variant="body1">
                 {"Total Shipments : " + data.visits.length}
-              </Typography>
-              <Typography variant="body1">
-                {"current index: " + data.vehicleid}
               </Typography>
             </CardContent>
           </Card>
