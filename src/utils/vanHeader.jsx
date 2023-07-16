@@ -21,7 +21,7 @@ const VanHeader = ({ data, onCardClick }) => {
         display: "flex",
         cursor: "pointer",
         justifyContent: "center",
-        flexFlow: "wrapg",
+        flexFlow: "wrap",
       }}
     >
       {data.map((data, key) => {
