@@ -11,15 +11,21 @@ import {
   TablePagination,
   Typography,
 } from "@mui/material";
-import dayjs from "dayjs";
+import data from "../data.json";
 
-const SimpleTable = ({ data }) => {
+const SimpleTable = ({ index }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const visits = data[3]?.visits || [];
+  const visits = data[index]?.visits || data[0].visits;
   const columns = ["shipmentLabel", "address", "VisitTime"];
+
+  // const [visits, setVisits] = useState([]);
+
+  // useEffect(() => {
+  //   setVisits(data[index]?.visits || data[0].visits);
+  // }, [data, index]);
 
   const handleChangePage = (_, newPage) => {
     setPage(newPage);

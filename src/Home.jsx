@@ -6,12 +6,19 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import BasicTable from "./utils/datatable";
 import FilterTable from "./utils/filterTable";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import SimpleChart from "./utils/barplot";
+import PieChart from "./utils/piechart";
 import data from "./data.json";
 
 const Home = () => {
+  const [index, setIndex] = useState(0);
+
+  const handleCardClick = (newIndex) => {
+    console.log(newIndex);
+    setIndex(newIndex - 1);
+  };
   return (
     <div
       className="main-wrapper"
@@ -48,6 +55,7 @@ const Home = () => {
                 background: "#008DD5",
                 color: "white",
               }}
+              onClick={() => handleCardClick(data.vehicleid)}
             >
               <CardContent
                 sx={{
@@ -67,17 +75,29 @@ const Home = () => {
                 <Typography variant="body1">
                   {"Total Shipments : " + data.visits.length}
                 </Typography>
+                <Typography variant="body1">
+                  {"current index: " + index}
+                </Typography>
               </CardContent>
-              {/* <CardActions>
-                <Button size="small">Card Button</Button>
-              </CardActions> */}
             </Card>
           );
         })}
       </Box>
+
+      {/* Bar Plot Component */}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <SimpleChart data={data} />
+      </Box>
+
+      {/* Pie Chart Component */}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <PieChart data={data} />
+      </Box>
+
+      {/* Datatable Compoenet */}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <div style={{ width: "70%" }}>
-          <FilterTable data={data} />
+          <FilterTable data={index} />
         </div>
       </Box>
     </div>
