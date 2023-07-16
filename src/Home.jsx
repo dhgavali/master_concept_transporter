@@ -61,6 +61,25 @@ const Home = () => {
           <FilterTable counter={index} />
         </div>
       </Box>
+
+      {/* Footer */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          background: "black",
+          padding: 2,
+          color: "#f2f2f2",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ width: "70%" }}>
+          <Typography variant="body1">
+            {"Project Developed by : "}{" "}
+            <a href="https://dhgavali.me" style={{TextDecoderation: "none", color:"grey"}}>Dhananjay Gavali</a>
+          </Typography>
+        </div>
+      </Box>
     </div>
   );
 };
